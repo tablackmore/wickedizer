@@ -41,19 +41,23 @@ module.exports = function (grunt) {
                     banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
                 src: ['src/safari/safari-background-functionality.js'],
-                dest: 'extensions/safari/js/background.js'
+                dest: 'extensions/safari/wikedizer.safariextension/js/background.js'
             },
             test: {
                 options: {
                     stripBanners: true,
-                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                    footer: 'module.exports = wickedizer;'
                 },
                 src: ['src/wickedizer.js', 'src/wickedizer.data.js', 'src/wickedizer.textReplacer.js', 'src/wickedizer.htmlTextNodeWalker.js', 'src/wickedizer.showActiveSplash.js'],
                 dest: 'tests/wickedizer.js'
             }
+        },
+        nodeunit: {
+            all: ['tests/*_test.js']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat']);
+    grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.registerTask('default', ['concat', 'nodeunit']);
 };
