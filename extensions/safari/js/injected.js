@@ -65,7 +65,7 @@ wickedizer.showActiveSplash = function () { //not in an iframe
 safari.self.tab.dispatchMessage("initialise");
 safari.self.addEventListener("message", function (request) {
     if (request.message.active) {
-        wickedizer.htmlTextNodeWalk();
+        wickedizer.htmlTextNodeWalker();
         wickedizer.showActiveSplash();
     } else {
         if (request.name !== "initialise") {
