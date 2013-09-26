@@ -22,7 +22,7 @@
         }
         return text;
     }
-    //Walk through all the text nodes in the body and wickedise their text
+    /*Walk through all the text nodes in the body and wickedise their text*/
 
     function wickedizer() {
         var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false),
@@ -38,17 +38,11 @@
             wickedizer();
         }
     });
-    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    chrome.runtime.onMessage.addListener(function (request) {
         if (request.active) {
             wickedizer();
-            sendResponse({
-                activated: true
-            });
         } else {
             location.reload();
-            sendResponse({
-                activated: false
-            });
         }
     });
 }());

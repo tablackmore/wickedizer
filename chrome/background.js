@@ -28,7 +28,7 @@ chrome.browserAction.onClicked.addListener(function () {
         for (var i = 0; i < tabs.length; i = i + 1) {
             chrome.tabs.sendMessage(tabs[i].id, {
                 active: activate
-            }, function (response) {});
+            });
         }
     });
 });
