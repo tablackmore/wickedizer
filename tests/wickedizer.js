@@ -1,4 +1,5 @@
-/*! wickedizer - v0.0.1 - 2013-09-26 */var wickedizer = {};
+/* wickedizer - v0.0.1 - 2013-09-26 */
+var wickedizer = {};
 wickedizer.data = {};
 wickedizer.data.wickedWords = ["great", "awesome", "incredible", "brilliant", "wonderful", "amazing", "amasing", "lovely", "beautiful", "pretty", "splendid"];
 wickedizer.data.wickedestWords = ["best", "nicest"];
@@ -37,7 +38,6 @@ wickedizer.textReplacer = function (text) {
     }
     return text;
 };
-/*global wickedizer: false, NodeFilter: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
 wickedizer.htmlTextNodeWalker = function () {
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false),
         node;
@@ -45,7 +45,6 @@ wickedizer.htmlTextNodeWalker = function () {
         node.nodeValue = wickedizer.textReplacer(node.nodeValue);
     }
 };
-/*global wickedizer: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
 wickedizer.showActiveSplash = function () { //not in an iframe
     if (window.self === window.top) {
         var div = document.createElement("div");

@@ -1,4 +1,4 @@
-/*! wickedizer - v0.0.1 - 2013-09-26 *//*global chrome: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
+/* wickedizer - v0.0.1 - 2013-09-26 */
 (function () {
     "use strict";
     var activate = false;

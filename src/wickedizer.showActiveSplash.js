@@ -1,5 +1,4 @@
-/*jslint browser:true */
-/*global wickedizer: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
+/*global wickedizer: false, document: false, window: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
 wickedizer.showActiveSplash = function () { //not in an iframe
     if (window.self === window.top) {
         var div = document.createElement("div");

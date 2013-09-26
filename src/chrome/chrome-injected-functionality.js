@@ -1,4 +1,3 @@
-/*jslint browser:true */
 /*global chrome: false, wickedizer: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
 chrome.runtime.sendMessage({
     type: "active"
