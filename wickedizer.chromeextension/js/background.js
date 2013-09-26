@@ -10,11 +10,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 function updateIcon() {
     if (activate) {
         chrome.browserAction.setIcon({
-            path: "icon2.png"
+            path: "icons/active.png"
         });
     } else {
         chrome.browserAction.setIcon({
-            path: "icon1.png"
+            path: "icons/inactive.png"
         });
     }
 }

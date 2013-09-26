@@ -1,5 +1,5 @@
 /*jslint browser:true */
-/*global chrome: false,NodeFilter: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
+/*global safari: false,NodeFilter: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
 (function () {
     "use strict";
     var wickedWords = ["great", "awesome", "incredible", "brilliant", "wonderful", "amazing", "amasing", "lovely", "beautiful", "pretty"],
@@ -49,18 +49,33 @@
             node.nodeValue = wickedise(node.nodeValue);
         }
     }
-    chrome.runtime.sendMessage({
-        type: "active"
-    }, function (response) {
-        if (response.active) {
-            wickedizer();
+
+    function showActive() {
+        //not in an iframe
+        if (window.self === window.top) {
+            var div = document.createElement("div");
+            div.style.position = "fixed";
+            div.style.width = "100px";
+            div.style.height = "30px";
+            div.style.fontSize = "10px";
+            div.innerHTML = "WICKEDIZER<br/>MODE ON";
+            div.style.backgroundColor = "red";
+            div.style.bottom = "0px";
+            div.style.left = "0px";
+            div.style.padding = "4px";
+            div.style.zIndex = "500";
+            document.querySelector("body").appendChild(div);
         }
-    });
-    chrome.runtime.onMessage.addListener(function (request) {
-        if (request.active) {
+    }
+    safari.self.tab.dispatchMessage("initialise");
+    safari.self.addEventListener("message", function (request) {
+        if (request.message.active) {
             wickedizer();
+            showActive();
         } else {
-            location.reload();
+            if (request.name !== "initialise") {
+                location.reload();
+            }
         }
-    });
+    }, false);
 }());
