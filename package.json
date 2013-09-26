@@ -1,0 +1,29 @@
+{
+  "name": "wickedizer",
+  "version": "0.0.1",
+  "description": "making the web wicked",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tablackmore/wickedizer.git"
+  },
+  "author": "Tom Blackmore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tablackmore/wickedizer/issues"
+  }
+}
