@@ -1,4 +1,4 @@
-var wickedWords = ["great", "awesome", "incredible", "brilliant", "wonderful", "amazing", "amasing", "lovely", "beautiful", "pretty"],
+var wickedWords = ["great", "awesome", "incredible", "brilliant", "wonderful", "amazing", "amasing", "lovely", "beautiful", "pretty", "splendid"],
     wickedestWords = ["best", "nicest"];
 /*Walk through all the text nodes in the body and wickedise their text*/
 

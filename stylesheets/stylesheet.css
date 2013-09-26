@@ -370,6 +370,13 @@ Full-Width Styles
   background: #212121;
 }
 
+textarea {
+  width:100%;
+}
+
+#wickedOutput {
+  display:none;
+}
 
 
 /*******************************************************************************
