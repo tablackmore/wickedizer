@@ -1,4 +1,4 @@
 wickedizer
 ==========
 
-Wickedizer browser plugin to make the web wicked.
+Wickedizer browser extensions for Chrome and Safari to make the web wicked.
