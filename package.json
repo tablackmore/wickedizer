@@ -8,14 +8,14 @@
   },
   "dependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.2"
+    "grunt-contrib-concat": "~0.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "http-proxy": "~0.10.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tests/conversion_test.js"
   },
   "repository": {
     "type": "git",

@@ -59,5 +59,5 @@ module.exports = function (grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.registerTask('default', ['concat', 'nodeunit']);
+    grunt.registerTask('default', ['concat:test', 'nodeunit', 'concat']);
 };
