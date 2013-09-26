@@ -2,23 +2,41 @@
 /*global chrome: false,NodeFilter: false, alert: false, confirm: false, console: false, Debug: false, opera: false, prompt: false, WSH: false */
 (function () {
     "use strict";
-    var wickedWords = ["great", "awesome", "incredible", "wonderful", "amazing", "amasing", "lovely", "beautiful", "pretty"],
+    var wickedWords = ["great", "awesome", "incredible", "brilliant", "wonderful", "amazing", "amasing", "lovely", "beautiful", "pretty"],
         wickedestWords = ["best", "nicest"];
 
     function wickedise(text) {
-        var i;
+        "use strict";
         if (typeof text === "string") {
-            for (i = 0; i < wickedWords.length; i = i + 1) {
-                text = text.replace(new RegExp("an " + wickedWords[i], 'gi'), "a wicked");
-                text = text.replace(new RegExp(wickedWords[i], 'g'), "wicked");
-                text = text.replace(new RegExp(wickedWords[i].toUpperCase(), 'g'), "WICKED");
-                text = text.replace(new RegExp(wickedWords[i][0].toUpperCase() + wickedWords[i].substr(1, wickedWords[i].length), 'g'), "Wicked");
-            }
-            for (i = 0; i < wickedestWords.length; i = i + 1) {
-                text = text.replace(new RegExp(wickedestWords[i], 'g'), "wickedest");
-                text = text.replace(new RegExp(wickedestWords[i].toUpperCase(), 'g'), "WICKEDEST");
-                text = text.replace(new RegExp(wickedestWords[i][0].toUpperCase() + wickedestWords[i].substr(1, wickedestWords[i].length), 'g'), "Wickedest");
-            }
+            text = text.replace(new RegExp(wickedWords.join("|") + "|an " + wickedWords.join("|an "), 'gi'), function (match) {
+                var output = "wicked";
+                if (match.match(new RegExp("an ", "gi"))) {
+                    output = "a " + output;
+                }
+                // TitleCase
+                if (match.match(new RegExp("([A-Z]{1}[a-z]+)", "g"))) {
+                    output = output.replace(/\w\S*/g, function (txt) {
+                        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                    });
+                }
+                // UpperCase
+                if (match.match(new RegExp("([A-Z]{1}[A-Z]+)", "g"))) {
+                    output = output.toUpperCase();
+                }
+                return output;
+            });
+            text = text.replace(new RegExp(wickedestWords.join("|"), 'gi'), function (match) {
+                // TitleCase
+                if (match.match(new RegExp("([A-Z]{1}[a-z]+)", "g"))) {
+                    return "Wickedest";
+                }
+                // UpperCase
+                if (match.match(new RegExp("([A-Z]{1}[A-Z]+)", "g"))) {
+                    return "WICKEDEST";
+                }
+                // LowerCase
+                return "wickedest";
+            });
         }
         return text;
     }
