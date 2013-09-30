@@ -1,6 +1,4 @@
-
- (function () {
- "use strict";
+/* wickedizer - v0.0.1 - 2013-09-30 */
 var hatchet = {};
 hatchet.data = {};
 hatchet.data.wickedizer = {};
@@ -8,7 +6,8 @@ hatchet.data.wickedizer.wickedWords = ["great", "awesome", "incredible", "wonder
 hatchet.data.wickedizer.wickedestWords = ["best", "nicest"];
 hatchet.data.wickedizer.properWickedWords = ["awesome", "incredible", "amazing", "amasing"];
 hatchet.wickedizer = (function () {
-var regExpMostWicked = "\\bmost " + hatchet.data.wickedizer.wickedWords.join("\\b|\\bmost ") + "\\b",
+    "use strict";
+    var regExpMostWicked = "\\bmost " + hatchet.data.wickedizer.wickedWords.join("\\b|\\bmost ") + "\\b",
         regExpWickedest = new RegExp(regExpMostWicked + "|" + hatchet.data.wickedizer.wickedestWords.join("|"), 'gi'),
         regExpProperWicked = new RegExp("\\b" + hatchet.data.wickedizer.properWickedWords.join("\\b|\\b") + "\\b|\\ban " + hatchet.data.wickedizer.wickedWords.join("\\b|\\ban ") + "\\b", 'gi'),
         regExpWicked = new RegExp(hatchet.data.wickedizer.wickedWords.join("|") + "|an " + hatchet.data.wickedizer.wickedWords.join("|an "), 'gi'),
@@ -89,20 +88,4 @@ hatchet.showActiveSplash = function () { //not in an iframe
         document.querySelector("body").appendChild(div);
     }
 };
-chrome.runtime.sendMessage({
-    type: "active"
-}, function (response) {
-    if (response.active) {
-        hatchet.htmlTextNodeWalker();
-        hatchet.showActiveSplash();
-    }
-});
-chrome.runtime.onMessage.addListener(function (request) {
-    if (request.active) {
-        hatchet.htmlTextNodeWalker();
-        hatchet.showActiveSplash();
-    } else {
-        location.reload();
-    }
-});
-}());
+ module.exports = hatchet;

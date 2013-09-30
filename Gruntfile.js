@@ -1,18 +1,25 @@
 module.exports = function (grunt) {
-    // Do grunt-related things in here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         concat: {
+            output: {
+                options: {
+                    stripBanners: true,
+                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                },
+                src: ['src/hatchet.js', 'src/hatchet.data.js', 'src/hatchet.data.wickedizer.js', 'src/hatchet.wickedizer.js', 'src/hatchet.htmlTextNodeWalker.js', 'src/hatchet.showActiveSplash.js'],
+                dest: 'output/hatchet.js'
+            },
             chromeInjected: {
                 options: {
                     stripBanners: true,
-                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n (function () {\n "use strict";\n',
+                    banner: '\n (function () {\n "use strict";\n',
                     process: function (src) {
                         return src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
                     },
                     footer: '\n}());'
                 },
-                src: ['src/wickedizer.js', 'src/wickedizer.data.js', 'src/wickedizer.textReplacer.js', 'src/wickedizer.htmlTextNodeWalker.js', 'src/wickedizer.showActiveSplash.js', 'src/chrome/chrome-injected-functionality.js'],
+                src: ['output/hatchet.js', 'src/chrome/chrome-injected-functionality.js'],
                 dest: 'extensions/chrome/js/injected.js'
             },
             safariInjected: {
@@ -24,7 +31,7 @@ module.exports = function (grunt) {
                     },
                     footer: '\n}());'
                 },
-                src: ['src/wickedizer.js', 'src/wickedizer.data.js', 'src/wickedizer.textReplacer.js', 'src/wickedizer.htmlTextNodeWalker.js', 'src/wickedizer.showActiveSplash.js', 'src/safari/safari-injected-functionality.js'],
+                src: ['output/hatchet.js', 'src/safari/safari-injected-functionality.js'],
                 dest: 'extensions/safari/js/injected.js'
             },
             chromeBackground: {
@@ -47,10 +54,10 @@ module.exports = function (grunt) {
                 options: {
                     stripBanners: true,
                     banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
-                    footer: 'module.exports = wickedizer;'
+                    footer: '\n module.exports = hatchet;'
                 },
-                src: ['src/wickedizer.js', 'src/wickedizer.data.js', 'src/wickedizer.textReplacer.js', 'src/wickedizer.htmlTextNodeWalker.js', 'src/wickedizer.showActiveSplash.js'],
-                dest: 'tests/wickedizer.js'
+                src: ['output/hatchet.js'],
+                dest: 'tests/hatchet.js'
             }
         },
         nodeunit: {
@@ -59,5 +66,5 @@ module.exports = function (grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.registerTask('default', ['concat:test', 'nodeunit', 'concat']);
+    grunt.registerTask('default', ['concat:output', 'concat:test', 'nodeunit', 'concat']);
 };
