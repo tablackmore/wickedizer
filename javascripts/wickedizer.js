@@ -1,4 +1,4 @@
-/* wickedizer - v0.0.1 - 2013-09-30 */
+/* wickedizer - v0.0.1 - 2013-10-02 */
 var hatchet = {};
 hatchet.data = {};
 hatchet.data.wickedizer = {};
@@ -9,8 +9,8 @@ hatchet.wickedizer = (function () {
     "use strict";
     var regExpMostWicked = "\\bmost " + hatchet.data.wickedizer.wickedWords.join("\\b|\\bmost ") + "\\b",
         regExpWickedest = new RegExp(regExpMostWicked + "|" + hatchet.data.wickedizer.wickedestWords.join("|"), 'gi'),
-        regExpProperWicked = new RegExp("\\b" + hatchet.data.wickedizer.properWickedWords.join("\\b|\\b") + "\\b|\\ban " + hatchet.data.wickedizer.wickedWords.join("\\b|\\ban ") + "\\b", 'gi'),
-        regExpWicked = new RegExp(hatchet.data.wickedizer.wickedWords.join("|") + "|an " + hatchet.data.wickedizer.wickedWords.join("|an "), 'gi'),
+        regExpProperWicked = new RegExp("\\b" + hatchet.data.wickedizer.properWickedWords.join("\\b|\\b") + "\\b|\\ban " + hatchet.data.wickedizer.wickedWords.join("\\b|\\ban ") + "\\b|\\ban " + hatchet.data.wickedizer.wickedWords.join("\\b|\\ban ") + "\\b", 'gi'),
+        regExpWicked = new RegExp(hatchet.data.wickedizer.wickedWords.join("|") + "|\\ban " + hatchet.data.wickedizer.wickedWords.join("|\\ban "), 'gi'),
         wickedize = function (text) {
             if (typeof text === "string") {
                 text = text.replace(regExpWickedest, function (match) {
