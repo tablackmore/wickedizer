@@ -1,4 +1,4 @@
-/* wickedizer - v0.0.1 - 2013-09-30 */
+/* wickedizer - v0.0.1 - 2013-10-02 */
 (function () {
     "use strict";
     var active = false;
