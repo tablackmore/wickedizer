@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="Defining scope for custom Sublime Text 2 snippets">
+    <meta name="og:description" content="While trying to write my own snippets for Sublime Text 2, I ran into the following two problems:
+
+
+Finding scope keys. I figured out that I can look through my packages one by one and find referenc...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets">
+
+    
+    
+    <script type="text/javascript" async="" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/ados"></script><script type="text/javascript" async="" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/ga.js"></script><script type="text/javascript" async="" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/quant.js"></script><script type="text/javascript" async="" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/ados.js"></script><script type="text/javascript" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Defining scope for custom Sublime Text 2 snippets&#39;" href="http://stackoverflow.com/feeds/question/13922174">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:13922174});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '13922174');
+            
+                    });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1380619805,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","enableSocialMediaInSharePopup":true},"user":{"fkey":"2e3e30408a7ae52195117730f69974fc","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"6c261bebf56a","js/moderator.js":"ed7a8238b2f8","js/full-anon.js":"ae68bd9d1e2e","js/full.js":"fbd3bdf8897a","js/wmd.js":"12e251f7c6c3","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"75f8938d6753","js/help.js":"6e6623243cf6","js/tageditor.js":"450c9e8426fc","js/tageditornew.js":"b6c68ad4c7dd","js/inline-tag-editing.js":"8e84e8a137f7","js/revisions.js":"d3e781ee5528","js/review.js":"947758ba83ea","js/tagsuggestions.js":"aa48ef6154df","js/post-validation.js":"bb996020492a","js/explore-qlist.js":"ec8bb4899db9","js/events.js":"fa1c73bcef48"});
+        
+    </script>
+    <script type="text/javascript">
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script type="text/javascript">
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" type="text/javascript" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/full-anon.js"></script><script async="" type="text/javascript" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/post-validation.js"></script><script type="text/javascript" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link href="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header" class="headeranon">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+<span id="hlinks-user"></span>
+<span id="hlinks-nav">                        <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f13922174%2fdefining-scope-for-custom-sublime-text-2-snippets">sign up</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f13922174%2fdefining-scope-for-custom-sublime-text-2-snippets">log in</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+
+ <span class="lsep">|</span>
+</span>
+<span id="hlinks-custom"></span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                        <div>
+                            <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="240" size="28" value="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                            <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                            <li><a id="nav-tour" href="http://stackoverflow.com/about">Tour</a></li>
+                            <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/about" id="tell-me-more" class="button">Tell me more</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            }
+            if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/" });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow.html" class="question-hyperlink">Defining scope for custom Sublime Text 2 snippets</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="13922174" id="question">
+    
+                <script type="text/javascript">
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk457572162",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk457572162"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTE5LCJkaSI6IjIxZGYxYWQ1YTcxNTQwMzBiYTY3NjdiMmE1ZmE2ZDdiIiwiZG0iOjEsImZjIjo4ODA1LCJmbCI6MjQ0NCwia3ciOiJzY29wZSxzdWJsaW1ldGV4dDIsY29kZS1zbmlwcGV0cyIsIm53IjoyMiwicmYiOiJodHRwczovL3d3dy5nb29nbGUuc2UvIiwicnYiOjAsInByIjoxNTY4LCJzdCI6ODI3Nywiem4iOjQzLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&s=_cY9Zm9UzyNR7EXijlpp4G1JMtQ" rel="nofollow" target="_blank" title=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/4c4f1be011a447efbce49c1811022e7a.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/i.gif"></div>  
+
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="13922174">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span class="vote-count-post ">16</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>11</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+
+        <p>While trying to write my own snippets for Sublime Text 2, I ran into the following two problems:</p>
+
+<ol>
+<li><p><strong>Finding scope keys</strong>. I figured out that I can look through my packages one by one and find references to a declared "scope" property. For example in <code>~/Library/Application Support/Sublime Text 2/Packages/JavaScript/Comments.tmPreferences</code> (a file in my HTML package) there's these two lines:</p>
+
+<pre><code>&lt;key&gt;scope&lt;/key&gt;
+&lt;string&gt;source.js&lt;/string&gt;
+</code></pre>
+
+<p>So if I want my current snippet to work on javascript files, I define my scope like:</p>
+
+<pre><code>&lt;scope&gt;source.js&lt;/scope&gt;
+</code></pre>
+
+<p>I'm assuming all these scope keys are defined on-the-fly based on what Packages I have installed. Does Sublime Text build a list anywhere that I can more easily reference? Perusing through a bunch of package files seems overly tedious. </p></li>
+<li><p><strong>Defining multiple scope properties</strong>. This I've figured out, and the following line allows my snippet to work in both HTML and JavaScript files.</p>
+
+<pre><code>&lt;scope&gt;text.html, source.js&lt;/scope&gt;
+</code></pre></li>
+</ol>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/scope" class="post-tag" title="show questions tagged &#39;scope&#39;" rel="tag">scope</a> <a href="http://stackoverflow.com/questions/tagged/sublimetext2" class="post-tag" title="show questions tagged &#39;sublimetext2&#39;" rel="tag">sublimetext2</a> <a href="http://stackoverflow.com/questions/tagged/code-snippets" class="post-tag" title="" rel="tag">code-snippets</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/13922174" title="short permalink to this question" class="short-link" id="link-post-13922174">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13922174/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+            
+
+            <a href="http://stackoverflow.com/posts/13922174/revisions" title="show all edits to this post">edited <span title="2013-08-29 16:28:54Z" class="relativetime">Aug 29 at 16:28</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/517705/sk8erpeter"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/37242c8f67c92f6b0587cd860a52675d" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/517705/sk8erpeter">Sk8erPeter</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,570</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="29 bronze badges"><span class="badge3"></span><span class="badgecount">29</span></span>
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+        
+
+    <div class="user-info ">
+        <div class="user-action-time">
+            
+
+                    asked <span title="2012-12-17 21:05:04Z" class="relativetime">Dec 17 '12 at 21:05</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1623223/james-heston"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/03aa8f36aca4be2c0d7b2f4c45f01096" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1623223/james-heston">James Heston</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">116</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+        <div id="comments-13922174" class="comments dno" data-localized="true">
+            <table>
+                <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+                        <tr><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <a id="comments-link-13922174" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a>
+    </td>
+</tr>            </tbody></table>    
+</div>
+
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="15911198"></a>
+<div id="answer-15911198" class="answer accepted-answer" data-answerid="15911198">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="15911198">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">11</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Look just hit <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>p</kbd> in a file of the desired scope and look at the status bar for the scope key. Then use that key in your snippet.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/15911198" title="short permalink to this answer" class="short-link" id="link-post-15911198">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15911198/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+            
+
+            <a href="http://stackoverflow.com/posts/15911198/revisions" title="show all edits to this post">edited <span title="2013-07-10 15:23:40Z" class="relativetime">Jul 10 at 15:23</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1549047/joneshf"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/14bfafeafcbeea712ca874345b4b8837" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1549047/joneshf">joneshf</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">582</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+            
+
+                        answered <span title="2013-04-09 19:49:48Z" class="relativetime">Apr 9 at 19:49</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1249348/joseph-knight"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/1855014e1dcaa5a4d1cb1d0440434fb8" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1249348/joseph-knight">Joseph Knight</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">134</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+        <div id="comments-15911198" class="comments" data-localized="true">
+            <table>
+                <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+
+    <tr id="comment-23702347" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            
+<div style="display: block;">
+	<span class="comment-copy">I don't see such a value in the status bar. Could you provide a screen shot?</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/425275/ime-vidas" title="48527 reputation" class="comment-user">Šime Vidas</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#comment23702347_15911198"><span title="2013-05-12 17:42:30Z" class="relativetime-clean">May 12 at 17:42</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-23974045" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            
+<div style="display: block;">
+	<span class="comment-copy">Neither do I. This must be dependent on some package.</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/257944/bibhas" title="2942 reputation" class="comment-user">Bibhas</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#comment23974045_15911198"><span title="2013-05-21 06:57:23Z" class="relativetime-clean">May 21 at 6:57</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-24310639" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            
+<div style="display: block;">
+	<span class="comment-copy">It is package dependent; the package is called <i>Scope Hunter</i>, and there's a link in my answer below.</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/1558022/alexwlchan" title="173 reputation" class="comment-user">alexwlchan</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#comment24310639_15911198"><span title="2013-05-31 11:49:13Z" class="relativetime-clean">May 31 at 11:49</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-25570299" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>   
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            
+<div style="display: block;">
+	<span class="comment-copy">The command is ctrl+shift+alt+p.</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/1549047/joneshf" title="582 reputation" class="comment-user">joneshf</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#comment25570299_15911198"><span title="2013-07-10 15:13:27Z" class="relativetime-clean">Jul 10 at 15:13</span></a></span>
+		<span class="edited-yes" title="this comment was edited 1 times"></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-26917440" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>   
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            
+<div style="display: block;">
+	<span class="comment-copy">It's ctrl+shift+p on OS X.</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/21217/dain" title="3986 reputation" class="comment-user">dain</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#comment26917440_15911198"><span title="2013-08-20 14:56:23Z" class="relativetime-clean">Aug 20 at 14:56</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a id="comments-link-15911198" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+            <script type="text/javascript">
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk27106017",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk27106017"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTI0LCJkaSI6IjBjYzY2ZDZkOGVlYzQxZGJhZGZiMjlhNmI2NjQyMWVhIiwiZG0iOjEsImZjIjo4ODEwLCJmbCI6MjQ0NCwia3ciOiJzY29wZSxzdWJsaW1ldGV4dDIsY29kZS1zbmlwcGV0cyIsIm53IjoyMiwicmYiOiJodHRwczovL3d3dy5nb29nbGUuc2UvIiwicnYiOjAsInByIjoxNTY4LCJzdCI6ODI3Nywiem4iOjQ0LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&s=gjzKpAv77FMlUVNRxjLfkRu9GT8" rel="nofollow" target="_blank" title=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/0a96cc99c1784d6abe3cae6b8c8bf013.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/i(1).gif"></div>  
+
+
+
+  
+<a name="14682280"></a>
+<div id="answer-14682280" class="answer" data-answerid="14682280">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="14682280">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">40</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Here is a list of scopes to use in Sublime Text 2 snippets - </p>
+
+<pre><code>ActionScript: source.actionscript.2
+AppleScript: source.applescript
+ASP: source.asp
+Batch FIle: source.dosbatch
+C#: source.cs
+C++: source.c++
+Clojure: source.clojure
+CSS: source.css
+D: source.d
+Diff: source.diff
+Erlang: source.erlang
+Go: source.go
+GraphViz: source.dot
+Groovy: source.groovy
+Haskell: source.haskell
+HTML: text.html(.basic)
+JSP: text.html.jsp
+Java: source.java
+Java Properties: source.java-props
+Java Doc: text.html.javadoc
+JSON: source.json
+Javascript: source.js
+BibTex: source.bibtex
+Latex Log: text.log.latex
+Latex Memoir: text.tex.latex.memoir
+Latex: text.tex.latex
+TeX: text.tex
+Lisp: source.lisp
+Lua: source.lua
+MakeFile: source.makefile
+Markdown: text.html.markdown
+Multi Markdown: text.html.markdown.multimarkdown
+Matlab: source.matlab
+Objective-C: source.objc
+Objective-C++: source.objc++
+OCaml campl4: source.camlp4.ocaml
+OCaml: source.ocaml
+OCamllex: source.ocamllex
+Perl: source.perl
+PHP: source.php
+Regular Expression(python): source.regexp.python
+Python: source.python
+R Console: source.r-console
+R: source.r
+Ruby on Rails: source.ruby.rails
+Ruby HAML: text.haml
+SQL(Ruby): source.sql.ruby
+Regular Expression: source.regexp
+RestructuredText: text.restructuredtext
+Ruby: source.ruby
+Scala: source.scala
+Shell Script: source.shell
+SQL: source.sql
+TCL: source.tcl
+HTML(TCL): text.html.tcl
+Plain text: text.plain
+Textile: text.html.textile
+XML: text.xml
+XSL: text.xml.xsl
+YAML: source.yaml
+</code></pre>
+
+<p>If anything is missing, add it in this gist <a href="https://gist.github.com/4705378">https://gist.github.com/4705378</a>.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/14682280" title="short permalink to this answer" class="short-link" id="link-post-14682280">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14682280/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+            
+
+                        answered <span title="2013-02-04 07:39:11Z" class="relativetime">Feb 4 at 7:39</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/257944/bibhas"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/031d3c59dd2bae886bcf092883c9f5ff" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/257944/bibhas">Bibhas</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">2,942</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="42 bronze badges"><span class="badge3"></span><span class="badgecount">42</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+        <div id="comments-14682280" class="comments dno" data-localized="true">
+            <table>
+                <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+                        <tr><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <a id="comments-link-14682280" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="14782329"></a>
+<div id="answer-14782329" class="answer" data-answerid="14782329">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="14782329">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>To answer, #1, look in the syntax's <em>.tmLanguage</em> file, look for the key: <code>scopeName</code>.  This is what the syntax uses for the snippet's scope value.</p>
+
+<p>For example, an excerpt from <a href="https://github.com/nathos/sass-textmate-bundle/blob/master/Syntaxes/Sass.tmLanguage" rel="nofollow">nathos / sass-textmate-bundle</a></p>
+
+<pre><code>&lt;key&gt;scopeName&lt;/key&gt;
+&lt;string&gt;source.sass&lt;/string&gt;
+</code></pre>
+
+<p>So you would use <code>source.sass</code> in your snippet.</p>
+
+<p>Here is more info on <a href="https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/syntaxdefs.html" rel="nofollow">defining a syntax</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/14782329" title="short permalink to this answer" class="short-link" id="link-post-14782329">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14782329/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+            
+
+                        answered <span title="2013-02-08 22:23:25Z" class="relativetime">Feb 8 at 22:23</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1319954/d-rail"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/ba5ee0a1129129c0bb76e15c718ad1c1" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1319954/d-rail">d_rail</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,149</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+        <div id="comments-14782329" class="comments dno" data-localized="true">
+            <table>
+                <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+                        <tr><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <a id="comments-link-14782329" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="16733040"></a>
+<div id="answer-16733040" class="answer" data-answerid="16733040">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="16733040">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>There's a package called <strong>Scope Hunter</strong>, by <a href="https://github.com/facelessuser" rel="nofollow">Isaac Muse</a>, which is really helpful for this.</p>
+
+<p>It can show you the scope under any cursor in a document, which I've found really helpful when debugging my own snippets. Sometimes it's very detailed; a sample scope from my frontmost document:</p>
+
+<pre><code>Scope: text.tex.latex
+       meta.function.environment.list.latex
+       meta.function.environment.general.latex
+       meta.function.environment.math.latex
+       string.other.math.block.environment.latex
+       meta.group.braces.tex
+       meta.space-after-command.latex
+</code></pre>
+
+<p>(Wrapped for ease of reading)</p>
+
+<p>I wouldn't have been able to find that if I spent a week picking SL2 apart, but this package gets it in seconds. Highly recommended.</p>
+
+<p>This level of detail also means that you can define snippets in a very granular way, if you want. For example, the <code>meta.function.environment.list.latex</code> corresponds broadly to lists in LaTeX, so I have a snippet that inserts a new <code>\item</code> when I press super+enter in a list environment, but nobody else. I can target snippets much more effectively than with blind guesswork.</p>
+
+<p>The source code is <a href="https://github.com/facelessuser/ScopeHunter" rel="nofollow">in <strong>Github</strong></a>, or you can install it through <strong>Package Control</strong>.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/16733040" title="short permalink to this answer" class="short-link" id="link-post-16733040">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16733040/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+            
+
+            <a href="http://stackoverflow.com/posts/16733040/revisions" title="show all edits to this post">edited <span title="2013-05-31 11:51:57Z" class="relativetime">May 31 at 11:51</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+            
+
+                        answered <span title="2013-05-24 10:36:48Z" class="relativetime">May 24 at 10:36</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1558022/alexwlchan"><div class=""><img src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/63a70b00feba1e66410b7799b58a897d" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1558022/alexwlchan">alexwlchan</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">173</span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+        <div id="comments-16733040" class="comments dno" data-localized="true">
+            <table>
+                <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+                        <tr><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <a id="comments-link-16733040" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/13922174/answer/submit" method="post" class="post-form">
+							<input type="hidden" id="post-id" value="13922174">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="2e3e30408a7ae52195117730f69974fc">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f13922174%2fdefining-scope-for-custom-sublime-text-2-snippets%23new-answer">login</a></h3>
+                        <script type="text/javascript">
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f13922174%2fdefining-scope-for-custom-sublime-text-2-snippets%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script type="text/javascript"&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/scope" class="post-tag" title="show questions tagged &#39;scope&#39;" rel="tag">scope</a> <a href="http://stackoverflow.com/questions/tagged/sublimetext2" class="post-tag" title="show questions tagged &#39;sublimetext2&#39;" rel="tag">sublimetext2</a> <a href="http://stackoverflow.com/questions/tagged/code-snippets" class="post-tag" title="show questions tagged &#39;code-snippets&#39;" rel="tag">code-snippets</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+							<div class="module question-stats">
+					<p class="label-key">tagged</p>
+					<div class="tagged"><a href="http://stackoverflow.com/questions/tagged/scope" class="post-tag" title="show questions tagged &#39;scope&#39;" rel="tag">scope</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">4123</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/sublimetext2" class="post-tag" title="show questions tagged &#39;sublimetext2&#39;" rel="tag">sublimetext2</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1948</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/code-snippets" class="post-tag" title="show questions tagged &#39;code-snippets&#39;" rel="tag">code-snippets</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">657</span></span><br>
+</div>
+					<table id="qinfo">
+						<tbody><tr>
+							<td>
+								<p class="label-key">asked</p>
+							</td>
+							<td style="padding-left: 10px">
+								<p class="label-key" title="2012-12-17 21:05:04Z"><b>9 months ago</b></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="label-key">viewed</p>
+							</td>
+
+							<td style="padding-left: 10px">
+								<p class="label-key">
+									<b>4796 times</b>
+								</p>
+							</td>
+						</tr>
+							<tr>
+								<td>
+									<p class="label-key">active</p>
+								</td>
+								<td style="padding-left: 10px">
+									<p class="label-key"><b><a href="http://stackoverflow.com/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets?lastactivity" class="lastactivity-link" title="2013-08-29 16:28:54Z">1 month ago</a></b></p>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+						
+			            <script type="text/javascript">
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk724519412",17).setZone(45) ; });                    
+            </script>
+              
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=144" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/39885/senior-developer-erlang-klarna?a=MDYldJ8Q" target="_blank" title="Senior Developer - Erlang at Klarna. Click to learn more."> Senior Developer - Erlang<br> <span class="company">Klarna</span> <span class="location">Stockholm, Sweden</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/39867/backend-java-developer-with-a-passion-for-innometrics?a=MCzBUH2E" target="_blank" title="Backend Java Developer with a Passion for Scalability at Innometrics. Click to learn more."> Backend Java Developer with a Passion for Scalability<br> <span class="company">Innometrics</span> <span class="location">Stockholm, Sweden</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/40375/duktiga-systemutvecklare-kentor?a=NeZbRbTq" target="_blank" title="Duktiga systemutvecklare at Kentor. Click to learn more."> Duktiga systemutvecklare<br> <span class="company">Kentor</span> <span class="location">Gothenburg, Sweden</span> </a> </li> </ul> <img alt="" class="impression" src="./sublimetext2 - Defining scope for custom Sublime Text 2 snippets - Stack Overflow_files/MCzBUH2E-NeZbRbTq-MDYldJ8Q-144" style="display:none"></div>
+
+
+
+			  
+    
+				<div class="module sidebar-linked">
+					<h4 id="h-linked">Linked</h4>
+					<div class="linked" data-tracker="lq=1">
+						<div class="spacer">
+<a href="http://stackoverflow.com/q/14780854?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/14780854/how-can-i-define-a-custom-scope-for-snippets-in-sublime-text-2?lq=1" class="question-hyperlink">How can I define a custom scope for snippets in Sublime Text 2?</a>
+</div>
+
+					</div>
+				</div>
+							<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+					<div class="related" data-tracker="rq=1">
+						<div class="spacer">
+<a href="http://stackoverflow.com/q/10805755?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/10805755/vanilla-snippets-for-sublime-text-2?rq=1" class="question-hyperlink">Vanilla snippets for Sublime Text 2?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/11226313?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/11226313/how-can-i-skip-variable-in-sublime-text-2-snippet?rq=1" class="question-hyperlink">How can I skip variable in sublime text 2 snippet?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/12715685?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/12715685/php-snippets-not-working-in-sublime-text-2?rq=1" class="question-hyperlink">php snippets not working in sublime text 2?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/13063033?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/13063033/sublime-text-2-name-of-the-scope-selector-for-objective-c?rq=1" class="question-hyperlink">Sublime Text 2: name of the scope selector for Objective-C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/14780854?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/14780854/how-can-i-define-a-custom-scope-for-snippets-in-sublime-text-2?rq=1" class="question-hyperlink">How can I define a custom scope for snippets in Sublime Text 2?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/15038962?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/15038962/sublime-custom-snippet-not-displaying-code-hints-in-popup?rq=1" class="question-hyperlink">Sublime custom snippet not displaying code hints in popup</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/16624002?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">-1</div>
+</a>
+<a href="http://stackoverflow.com/questions/16624002/how-to-create-snippet-in-sublime-text-2?rq=1" class="question-hyperlink">how to create snippet in sublime text 2</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/16808532?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/16808532/why-doesnt-snippets-in-sublime-text-do-anything?rq=1" class="question-hyperlink">Why doesn't snippets in Sublime text do anything?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/16924477?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/16924477/custom-javascript-snippets-for-emmet-in-sublime-text-2?rq=1" class="question-hyperlink">Custom JavaScript snippets for emmet (in Sublime Text 2)</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/17265919?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/17265919/custom-snippet-not-working-sublime-text?rq=1" class="question-hyperlink">Custom Snippet Not Working - Sublime Text</a>
+</div>
+
+					</div>
+				</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/13922174" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+	<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/13922174/ivc/948a');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/13922174/ivc/948a" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang"></div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/about">about</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/about/hiring">jobs</a>
+                    <a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MjAsImNtIjo5NTQsImNoIjoxMTc4LCJjciI6Mjc3NiwiZG0iOjQsImZjIjoyODYyLCJmbCI6Mjc1MSwibnciOjIyLCJydiI6MCwicHIiOjExNSwic3QiOjAsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2Fib3V0L2NvbnRhY3QiLCJyZSI6MX0&s=hRods5B22XvRBwWIwtIMekcyNF8">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;, &quot;/questions/13922174/defining-scope-for-custom-sublime-text-2-snippets&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Answers</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="IT security professionals">IT Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="statisticians, data analysts, data miners and data visualization experts">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackoverflow.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Overflow</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2013 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="footer-flair">
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+            </div>
+            <div id="svnrev">
+                rev 2013.10.1.1044
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script type="text/javascript">var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script type="text/javascript">
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('scope,sublimetext2,code-snippets');; ados_load(); });         
+</script>
+
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|scope|sublimetext2|code-snippets|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function () {
+        var ssl='https:'==document.location.protocol,
+            s=document.getElementsByTagName('script')[0],
+            ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src=(ssl?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+        s.parentNode.insertBefore(sc,s);
+    })();
+    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+
+</body></html>
